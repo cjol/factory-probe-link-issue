@@ -1,4 +1,5 @@
 name: event-probe
+run-name: "${{ github.event_name }} ${{ github.event.action }} #${{ github.event.issue.number || github.event.pull_request.number }} changes=${{ join(github.event.changes.*.from, '|') != '' }}"
 on:
   issues:
     types: [opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, locked, unlocked, milestoned, demilestoned, typed, untyped]
